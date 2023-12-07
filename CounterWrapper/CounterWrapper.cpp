@@ -5,7 +5,7 @@ CounterNet::CounterWrapper::CounterWrapper()
 	m_nativeCounterObject = new Counter();
 }
 
-CounterNet::CounterWrapper::CounterWrapper(Double initialValue)
+CounterNet::CounterWrapper::CounterWrapper(double initialValue)
 {	
 	m_nativeCounterObject = new Counter(initialValue);
 }
@@ -22,22 +22,32 @@ CounterNet::CounterWrapper::~CounterWrapper()
 	m_nativeCounterObject = 0;
 }
 
-Double CounterNet::CounterWrapper::Add(Double value) 
+double CounterNet::CounterWrapper::Add()
+{
+	return m_nativeCounterObject->Add();
+}
+
+double CounterNet::CounterWrapper::Add(double value) 
 {
 	return m_nativeCounterObject->Add(value);
 }
 
-Double CounterNet::CounterWrapper::Sub(Double value) 
+double CounterNet::CounterWrapper::Sub()
+{
+	return m_nativeCounterObject->Sub();
+}
+
+double CounterNet::CounterWrapper::Sub(double value) 
 {
 	return m_nativeCounterObject->Sub(value);
 }
 
-Double CounterNet::CounterWrapper::Value::get()
+double CounterNet::CounterWrapper::Value::get()
 {
 	return m_nativeCounterObject->GetValue();
 }
 
-void CounterNet::CounterWrapper::Value::set(Double value)
+void CounterNet::CounterWrapper::Value::set(double value)
 {
 	m_nativeCounterObject->SetValue(value);
 }

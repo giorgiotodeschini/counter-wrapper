@@ -12,17 +12,19 @@ namespace CounterNet {
 
 	public:		
 		CounterWrapper();
-		CounterWrapper(Double initialValue);
+		CounterWrapper(double initialValue);
 		!CounterWrapper();
 		~CounterWrapper();
 
-		Double Add(Double value);
-		Double Sub(Double value);
+		double Add();
+		double Add(double value);
+		double Sub();
+		double Sub(double value);
 
-		property Double Value
+		property double Value
 		{
-			Double get();
-			void set(Double value);
+			double get();
+			void set(double value);
 		}
 	};
 }
